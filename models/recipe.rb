@@ -34,11 +34,13 @@ class Recipe
     data = db_connection do |conn|
       conn.exec(query)
     end
+
     data.each do |recipe|
       recipes << Recipe.new(recipe["id"], recipe["name"], recipe["instructions"], recipe["description"])
     end
     recipes
   end
+
 
 end
 
